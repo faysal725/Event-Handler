@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1>this is not confused anymore</h1>
+    <p onclick="this.innerText = 'you clicked me'">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, nemo!</p>
+    <script>
+        const myObj = {
+            name: "kuddus Ali",
+            getFullName: function(){
+                console.log(this);          // this keyword এখানে myObj method টাকে represent করছে।
+                return 'Mr. ' + this.name;
+            }
+        }
+       myObj.getFullName();         // myObj  object টা এখানে তাঁর ভিতরের getFullName()  মেথডকে কল করছে। 
+ const anotherObj = {
+     name: 'Biddut Ali'
+ }
+//  anotherObj.getFullName = myObj.getFullName;
+//  console.log(anotherObj.getFullName);
+//  anotherObj.getFullName();              
+
+
+//কিন্তু যদি অন্য object anotherObj  থেকে getFullName method কে কল করা হয় তবে সেটা ঐ object এর প্রপার্টি দেখাবে।
+    
+    function add (a, b){
+        console.log(this);
+        return a + b;
+    }
+    add(12, 13);
+
+    anotherObj.sum = add;
+    anotherObj.sum();
+
+    setTimeout(function(){
+        
+    },1000)
+    
+    </script>
+</body>
+</html>
