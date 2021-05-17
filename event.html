@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+    <ul>
+        <li>my item</li>
+        <li>my life</li>
+        <li onclick="this.innerText='why hitting yourself' " >my rules</li>
+        <li onclick="itemClickHandler(event)" >Lorem, ipsum.</li>
+        <li id="lastperson">Illum, vitae.</li>
+    </ul>
+
+    <script>
+         function itemClickHandler(event){
+            console.log(event.target.innerText);
+            this.innerText='why hitting yourself';
+        }
+        document.getElementById('lastperson').addEventListener('click', itemClickHandler );
+    </script>
+</body>
+</html>
